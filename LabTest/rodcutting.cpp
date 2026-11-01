@@ -4,7 +4,7 @@ int main()
 {
     int n;
     cin>>n;
-    vector<int>price(n+1,0);
+    vector<int>price(n+1);
     for(int i=1;i<=n;i++)
     {
         cin>>price[i];
@@ -21,12 +21,14 @@ int main()
             }
         }
     }
+    cout<<"Max profit"<<endl;
     cout<<dp[n]<<endl;
-    int curr=n;
-    while(curr>0)
-    { // index;
-        cout<<cut[curr]<<" ";
-        curr-=cut[curr];
-    }cout<<endl;
-
+    int cur=n;
+    cout<<"Index of Price"<<endl;
+    while(cur>0)
+    {
+        cout<<cut[cur]<<" ";
+        cur-=cut[cur];
+    }
+    cout<<endl;
 }
